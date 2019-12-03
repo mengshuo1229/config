@@ -19,10 +19,3 @@ eureka:
   client:
     service-url:
       defaultZone: http://127.0.0.1:2001/eureka,http://127.0.0.1:2002
-
-# 暴露端点
-management:
-  endpoints:
-    web:
-      exposure:
-        include: bus-refresh
