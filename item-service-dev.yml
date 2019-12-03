@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: item-service
+## 设置启用那个profile 也可以通过设置启动参数 --spring.profiles.active=xxx 、或者java -jar xxx.jar --spring.profiles.active=xxx 来指定需要启用那个参数
+#  profiles:
+#    active: item1
+
+#server:
+#  port: 8001
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:2001/eureka,http://127.0.0.1:2002/eureka
+
+# 启用 hystrix 
+feign:
+  hystrix:
+    enabled: true
+
+# profile
+---
+spring:
+  profiles: item1
+server:
+  port: 8001
+  
+# profile
+---
+spring:
+  profiles:
+  - item2
+server:
+  port: 8002
